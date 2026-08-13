@@ -1,0 +1,9 @@
+{
+  "name": "SkinWise",
+  "short_name": "SkinWise",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "description": "Personalized skincare guidance and recommendations."
+}

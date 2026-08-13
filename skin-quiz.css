@@ -1,0 +1,505 @@
+/* Skin Quiz Styles */
+
+.quiz-main {
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: calc(100vh - 80px);
+}
+
+.quiz-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.quiz-header .kicker {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.quiz-header p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Quiz Form Sections */
+.quiz-form {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.quiz-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-header h2 {
+  font-size: 1.4rem;
+  color: #1a1a1a;
+  margin: 0;
+  font-weight: 700;
+}
+
+.section-help {
+  margin: 0;
+  color: #777;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Options Grid */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.options-grid.single-select {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.options-grid.multi-select {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+/* Option Cards */
+.option-card {
+  position: relative;
+  cursor: pointer;
+}
+
+.option-card input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.option-card .option-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background: #fafafa;
+  transition: all 0.3s ease;
+  gap: 0.5rem;
+}
+
+.option-emoji {
+  font-size: 2.5rem;
+  display: block;
+}
+
+.option-label {
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+}
+
+.option-desc {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Checked State */
+.option-card input:checked + .option-content {
+  border-color: #3498db;
+  background: #e8f4ff;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+.option-card input:checked + .option-content .option-label {
+  color: #2c5aa0;
+}
+
+/* Hover State */
+.option-card input:not(:checked):hover + .option-content {
+  border-color: #bbb;
+  background: white;
+}
+
+/* Quiz Actions */
+.quiz-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding-top: 1.5rem;
+  border-top: 2px solid #f0f0f0;
+  flex-wrap: wrap;
+}
+
+.submit-quiz-btn {
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Results Section */
+.results-section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.results-section.hidden {
+  display: none;
+}
+
+.results-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.results-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+/* Profile Badges */
+.profile-badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.profile-badge {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 2px solid #f0f0f0;
+}
+
+.badge-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.badge-value {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* Routine Cards */
+.routine-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.routine-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #3498db;
+  transition: all 0.3s ease;
+}
+
+.routine-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.routine-card .card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.routine-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
+}
+
+.routine-card .card-description {
+  font-size: 0.85rem;
+  color: #777;
+  margin: 0 0 1.5rem 0;
+  font-weight: 500;
+}
+
+/* Products List */
+.products-list {
+  margin-bottom: 1.5rem;
+}
+
+.product-item {
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  background: #f8f9fa;
+  border-left: 3px solid #3498db;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.product-name {
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+}
+
+.product-brand {
+  font-size: 0.85rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.product-price {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.product-benefit {
+  font-size: 0.8rem;
+  color: #3498db;
+  font-weight: 500;
+}
+
+/* Why Section */
+.why-section {
+  padding: 1rem;
+  background: #f0f8ff;
+  border-radius: 8px;
+  border-left: 3px solid #3498db;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.why-section strong {
+  color: #2c3e50;
+}
+
+/* Routine Tips */
+.routine-tips {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.routine-tips h2 {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  margin: 0 0 1.5rem 0;
+  font-weight: 700;
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.tips-list li {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid #3498db;
+  line-height: 1.6;
+  color: #555;
+}
+
+.tips-list li::before {
+  content: "✓ ";
+  font-weight: 700;
+  color: #27ae60;
+  margin-right: 0.5rem;
+}
+
+/* Routine Schedule */
+.routine-schedule {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.schedule-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid;
+}
+
+.schedule-card.morning {
+  border-top-color: #f39c12;
+}
+
+.schedule-card.evening {
+  border-top-color: #9b59b6;
+}
+
+.schedule-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 1.5rem 0;
+}
+
+.routine-steps {
+  list-style: decimal;
+  padding-left: 2rem;
+  margin: 0;
+}
+
+.routine-steps li {
+  margin-bottom: 1rem;
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.routine-steps li strong {
+  color: #1a1a1a;
+}
+
+/* Results Actions */
+.results-actions {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+#backToQuizBtn {
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .quiz-main {
+    padding: 1rem 0.75rem;
+  }
+
+  .quiz-form {
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+
+  .quiz-header h1 {
+    font-size: 2rem;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .options-grid.single-select {
+    grid-template-columns: 1fr;
+  }
+
+  .options-grid.multi-select {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .results-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .profile-badges {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .routine-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .routine-schedule {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .tips-list {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-actions {
+    flex-direction: column;
+  }
+
+  .submit-quiz-btn,
+  .button.secondary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .quiz-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .options-grid.multi-select {
+    grid-template-columns: 1fr;
+  }
+
+  .option-card .option-content {
+    padding: 1rem;
+  }
+
+  .option-emoji {
+    font-size: 2rem;
+  }
+
+  .results-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .profile-badges {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkinWise</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-head">
+            <span class="brand-name">SkinWise</span>
+            <span class="ai-badge">AI</span>
+          </div>
+          <p>Beginner Skincare Intelligence</p>
+        </div>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a class="nav-link active" href="index.html">My Routine</a>
+          <a class="nav-link" href="skin-quiz.html">Skin Quiz</a>
+          <a class="nav-link" href="ingredient-decoder.html">Ingredient Decoder</a>
+          <a class="nav-link" href="ai-advisor.html">AI Advisor</a>
+          <a class="nav-link" href="climate-adapter.html">Climate Adapter</a>
+          <a class="nav-link" href="skin-journal.html">Skin Journal</a>
+        </nav>
+
+        <div class="right-pill">
+          <span>Combination Skin</span>
+          <span class="pill-badge">3</span>
+        </div>
+      </header>
+
+      <main class="hero">
+        <div class="hero-copy">
+          <span class="kicker">IN INDIAN SKINCARE INTELLIGENCE</span>
+          <h1>Your skin is unique. Your routine should be too.</h1>
+          <p>
+            Expert routines tailored for Indian skin types, climate & weather.
+            Featuring top Indian skincare staples like Minimalist, Dot & Key,
+            Hyphen, WishCare, Plum, Forest Essentials & global favorites.
+          </p>
+        </div>
+
+        <aside class="hero-panel" aria-hidden="true">
+          <div class="panel-card">
+            <div class="panel-image"></div>
+            <div class="panel-details">
+              <div>
+                <p class="panel-label">Combination Skin Profile</p>
+                <p class="panel-subtitle">acne, hyperpigmentation</p>
+              </div>
+              <span class="budget-pill">$$ Budget</span>
+            </div>
+          </div>
+        </aside>
+      </main>
+
+      <section class="quiz-section">
+        <div class="quiz-container">
+          <h2>Find Your Perfect Routine</h2>
+          <p class="quiz-intro">Answer a few quick questions about your skin to get personalized recommendations.</p>
+          
+          <form id="quizForm" class="quiz-form">
+            <fieldset class="form-group">
+              <label for="skinType">What is your skin type?</label>
+              <select id="skinType" name="skinType" required>
+                <option value="">Select your skin type</option>
+                <option value="normal">Normal</option>
+                <option value="dry">Dry</option>
+                <option value="oily">Oily</option>
+                <option value="combination">Combination</option>
+                <option value="sensitive">Sensitive</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <label for="concerns">Primary skin concern?</label>
+              <select id="concerns" name="concerns" required>
+                <option value="">Select your main concern</option>
+                <option value="hydration">Hydration & Dryness</option>
+                <option value="acne">Acne & Blemishes</option>
+                <option value="antiAge">Anti-Aging</option>
+                <option value="redness">Redness & Sensitivity</option>
+                <option value="tone">Uneven Tone & Dullness</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <label for="environment">Your environment?</label>
+              <select id="environment" name="environment" required>
+                <option value="">Select your environment</option>
+                <option value="humid">Humid & Tropical</option>
+                <option value="dryAir">Dry Air</option>
+                <option value="sunny">Sunny & Hot</option>
+                <option value="urban">Urban & Polluted</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <label for="lifestyle">Your lifestyle?</label>
+              <select id="lifestyle" name="lifestyle" required>
+                <option value="">Select your lifestyle</option>
+                <option value="active">Active & Outdoor</option>
+                <option value="deskJob">Desk Job</option>
+                <option value="travel">Frequent Travel</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <label for="budget">Budget preference?</label>
+              <select id="budget" name="budget" required>
+                <option value="">Select your budget</option>
+                <option value="economy">Budget-Friendly</option>
+                <option value="mid">Mid-Range</option>
+                <option value="premium">Premium</option>
+              </select>
+            </fieldset>
+
+            <div class="form-actions">
+              <button type="submit" class="button primary">Get Recommendations</button>
+              <button type="reset" id="resetButton" class="button secondary">Clear</button>
+            </div>
+          </form>
+
+          <section id="recommendations" class="recommendations hidden">
+            <h3>Your Personalized Routine</h3>
+            <p id="summaryText" class="summary-text"></p>
+            <div id="cards" class="cards-grid"></div>
+          </section>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

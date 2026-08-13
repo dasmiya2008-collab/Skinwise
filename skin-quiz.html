@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Quiz - SkinWise</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="skin-quiz.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-head">
+            <span class="brand-name">SkinWise</span>
+            <span class="ai-badge">AI</span>
+          </div>
+          <p>Beginner Skincare Intelligence</p>
+        </div>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a class="nav-link" href="index.html">My Routine</a>
+          <a class="nav-link active" href="skin-quiz.html">Skin Quiz</a>
+          <a class="nav-link" href="ingredient-decoder.html">Ingredient Decoder</a>
+          <a class="nav-link" href="ai-advisor.html">AI Advisor</a>
+          <a class="nav-link" href="climate-adapter.html">Climate Adapter</a>
+          <a class="nav-link" href="skin-journal.html">Skin Journal</a>
+        </nav>
+
+        <div class="right-pill">
+          <span id="skinTypeDisplay">Select Skin Type</span>
+          <span class="pill-badge" id="concernCount">0</span>
+        </div>
+      </header>
+
+      <main class="quiz-main">
+        <!-- Quiz Form -->
+        <div id="quizSection" class="quiz-container">
+          <div class="quiz-header">
+            <span class="kicker">Personalized Skincare</span>
+            <h1>Find Your Perfect Routine</h1>
+            <p>Answer a few questions about your skin to get personalized product recommendations tailored to your unique needs.</p>
+          </div>
+
+          <form id="quizForm" class="quiz-form">
+            <!-- Skin Type Selection -->
+            <div class="quiz-section">
+              <div class="section-header">
+                <h2>1. What is your skin type?</h2>
+                <p class="section-help">Choose the one that best describes your skin</p>
+              </div>
+              <div class="options-grid single-select">
+                <label class="option-card">
+                  <input type="radio" name="skinType" value="normal" required />
+                  <div class="option-content">
+                    <span class="option-emoji">😊</span>
+                    <span class="option-label">Normal Skin</span>
+                    <span class="option-desc">Balanced, not too oily or dry</span>
+                  </div>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="skinType" value="dry" />
+                  <div class="option-content">
+                    <span class="option-emoji">🏜️</span>
+                    <span class="option-label">Dry Skin</span>
+                    <span class="option-desc">Tight, flaky, needs hydration</span>
+                  </div>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="skinType" value="oily" />
+                  <div class="option-content">
+                    <span class="option-emoji">💧</span>
+                    <span class="option-label">Oily Skin</span>
+                    <span class="option-desc">Shiny, prone to breakouts</span>
+                  </div>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="skinType" value="combination" />
+                  <div class="option-content">
+                    <span class="option-emoji">🔄</span>
+                    <span class="option-label">Combination Skin</span>
+                    <span class="option-desc">Mixed - oily T-zone, dry elsewhere</span>
+                  </div>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="skinType" value="sensitive" />
+                  <div class="option-content">
+                    <span class="option-emoji">⚠️</span>
+                    <span class="option-label">Sensitive Skin</span>
+                    <span class="option-desc">Easily irritated, reactive</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Skin Concerns - Multi-Select -->
+            <div class="quiz-section">
+              <div class="section-header">
+                <h2>2. What are your skin concerns?</h2>
+                <p class="section-help">Select all that apply - you can choose multiple options</p>
+              </div>
+              <div class="options-grid multi-select">
+                <label class="option-card">
+                  <input type="checkbox" name="concerns" value="acne" />
+                  <div class="option-content">
+                    <span class="option-emoji">🔴</span>
+                    <span class="option-label">Acne & Breakouts</span>
+                    <span class="option-desc">Pimples, cystic acne, congestion</span>
+                  </div>
+                </label>
+                <label class="option-card">
+                  <input type="checkbox" name="concerns" value="sensitivity" />
+                  <div class="option-content">
+                    <span class="option-emoji">🔥</span>
+                    <span class="option-label">Redness & Sensitivity</span>
+                    <span class="option-desc">Irritation, rosacea, reactive skin</span>
+                  </div>
+                </label>
+                <label class="option-card">
+                  <input type="checkbox" name="concerns" value="dryness" />
+                  <div class="option-content">
+                    <span class="option-emoji">💧</span>
+                    <span class="option-label">Dryness & Dehydration</span>
+                    <span class="option-desc">Flaky skin, needs hydration</span>
+                  </div>
+                </label>
+                <label class="option-card">
+                  <input type="checkbox" name="concerns" value="aging" />
+                  <div class="option-content">
+                    <span class="option-emoji">✨</span>
+                    <span class="option-label">Anti-Aging</span>
+                    <span class="option-desc">Fine lines, wrinkles, loss of elasticity</span>
+                  </div>
+                </label>
+                <label class="option-card">
+                  <input type="checkbox" name="concerns" value="hyperpigmentation" />
+                  <div class="option-content">
+                    <span class="option-emoji">🎨</span>
+                    <span class="option-label">Hyperpigmentation</span>
+                    <span class="option-desc">Dark spots, uneven tone, melasma</span>
+                  </div>
+                </label>
+                <label class="option-card">
+                  <input type="checkbox" name="concerns" value="oiliness" />
+                  <div class="option-content">
+                    <span class="option-emoji">⛔</span>
+                    <span class="option-label">Excess Oil</span>
+                    <span class="option-desc">Shine, greasy skin, enlarged pores</span>
+                  </div>
+                </label>
+                <label class="option-card">
+                  <input type="checkbox" name="concerns" value="scarring" />
+                  <div class="option-content">
+                    <span class="option-emoji">🧬</span>
+                    <span class="option-label">Scarring</span>
+                    <span class="option-desc">Acne scars, pock marks</span>
+                  </div>
+                </label>
+                <label class="option-card">
+                  <input type="checkbox" name="concerns" value="texture" />
+                  <div class="option-content">
+                    <span class="option-emoji">🪨</span>
+                    <span class="option-label">Texture Issues</span>
+                    <span class="option-desc">Bumpy skin, rough patches</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Budget Preference -->
+            <div class="quiz-section">
+              <div class="section-header">
+                <h2>3. What's your budget preference?</h2>
+                <p class="section-help">Choose the price range you're comfortable with</p>
+              </div>
+              <div class="options-grid single-select">
+                <label class="option-card">
+                  <input type="radio" name="budget" value="budget-friendly" required />
+                  <div class="option-content">
+                    <span class="option-emoji">💰</span>
+                    <span class="option-label">Budget-Friendly</span>
+                    <span class="option-desc">Under ₹500 per product</span>
+                  </div>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="budget" value="mid-range" />
+                  <div class="option-content">
+                    <span class="option-emoji">💵</span>
+                    <span class="option-label">Mid-Range</span>
+                    <span class="option-desc">₹500 - ₹1,500 per product</span>
+                  </div>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="budget" value="premium" />
+                  <div class="option-content">
+                    <span class="option-emoji">💎</span>
+                    <span class="option-label">Premium</span>
+                    <span class="option-desc">Above ₹1,500 per product</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Lifestyle/Environment -->
+            <div class="quiz-section">
+              <div class="section-header">
+                <h2>4. What's your lifestyle like?</h2>
+                <p class="section-help">Choose what best describes your daily routine</p>
+              </div>
+              <div class="options-grid single-select">
+                <label class="option-card">
+                  <input type="radio" name="lifestyle" value="active-outdoor" required />
+                  <div class="option-content">
+                    <span class="option-emoji">🏃</span>
+                    <span class="option-label">Active & Outdoor</span>
+                    <span class="option-desc">Exercise, sun exposure, sweating</span>
+                  </div>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="lifestyle" value="desk-job" />
+                  <div class="option-content">
+                    <span class="option-emoji">💻</span>
+                    <span class="option-label">Desk Job</span>
+                    <span class="option-desc">Indoor, screen time, AC</span>
+                  </div>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="lifestyle" value="frequent-travel" />
+                  <div class="option-content">
+                    <span class="option-emoji">✈️</span>
+                    <span class="option-label">Frequent Travel</span>
+                    <span class="option-desc">Different climates, on-the-go</span>
+                  </div>
+                </label>
+                <label class="option-card">
+                  <input type="radio" name="lifestyle" value="balanced" />
+                  <div class="option-content">
+                    <span class="option-emoji">⚖️</span>
+                    <span class="option-label">Balanced</span>
+                    <span class="option-desc">Mix of indoor and outdoor</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="quiz-actions">
+              <button type="submit" class="button primary submit-quiz-btn">
+                Get My Personalized Routine
+              </button>
+              <button type="reset" class="button secondary">Clear All</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Results Section -->
+        <div id="resultsSection" class="results-section hidden">
+          <!-- Skin Profile Summary -->
+          <div class="results-header">
+            <h1>Your Personalized Skincare Routine</h1>
+            <div class="profile-badges">
+              <div class="profile-badge">
+                <span class="badge-label">Skin Type</span>
+                <span class="badge-value" id="profileSkinType">—</span>
+              </div>
+              <div class="profile-badge">
+                <span class="badge-label">Concerns</span>
+                <span class="badge-value" id="profileConcerns">—</span>
+              </div>
+              <div class="profile-badge">
+                <span class="badge-label">Budget</span>
+                <span class="badge-value" id="profileBudget">—</span>
+              </div>
+              <div class="profile-badge">
+                <span class="badge-label">Lifestyle</span>
+                <span class="badge-value" id="profileLifestyle">—</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Routine Recommendations -->
+          <div class="routine-cards">
+            <div class="routine-card cleanser">
+              <div class="card-icon">🧼</div>
+              <h3>Cleanser</h3>
+              <p class="card-description">Morning & Night</p>
+              <div id="cleanserProducts" class="products-list"></div>
+              <div id="cleanserWhy" class="why-section"></div>
+            </div>
+
+            <div class="routine-card toner">
+              <div class="card-icon">💧</div>
+              <h3>Toner</h3>
+              <p class="card-description">After Cleansing</p>
+              <div id="tonerProducts" class="products-list"></div>
+              <div id="tonerWhy" class="why-section"></div>
+            </div>
+
+            <div class="routine-card essence">
+              <div class="card-icon">🌟</div>
+              <h3>Essence/Serum</h3>
+              <p class="card-description">Targeted Treatment</p>
+              <div id="essenceProducts" class="products-list"></div>
+              <div id="essenceWhy" class="why-section"></div>
+            </div>
+
+            <div class="routine-card moisturizer">
+              <div class="card-icon">🌱</div>
+              <h3>Moisturizer</h3>
+              <p class="card-description">Hydration & Protection</p>
+              <div id="moisturizerProducts" class="products-list"></div>
+              <div id="moisturizerWhy" class="why-section"></div>
+            </div>
+
+            <div class="routine-card sunscreen">
+              <div class="card-icon">☀️</div>
+              <h3>Sunscreen</h3>
+              <p class="card-description">Daily Protection</p>
+              <div id="sunscreenProducts" class="products-list"></div>
+              <div id="sunscreenWhy" class="why-section"></div>
+            </div>
+
+            <div class="routine-card treatment">
+              <div class="card-icon">⚗️</div>
+              <h3>Treatment/Mask</h3>
+              <p class="card-description">Weekly Boost</p>
+              <div id="treatmentProducts" class="products-list"></div>
+              <div id="treatmentWhy" class="why-section"></div>
+            </div>
+          </div>
+
+          <!-- Routine Tips -->
+          <div class="routine-tips">
+            <h2>Your Routine Tips</h2>
+            <ul id="tipsContainer" class="tips-list"></ul>
+          </div>
+
+          <!-- Morning & Night Routine -->
+          <div class="routine-schedule">
+            <div class="schedule-card morning">
+              <h3>🌅 Morning Routine</h3>
+              <ol id="morningRoutine" class="routine-steps"></ol>
+            </div>
+            <div class="schedule-card evening">
+              <h3>🌙 Evening Routine</h3>
+              <ol id="eveningRoutine" class="routine-steps"></ol>
+            </div>
+          </div>
+
+          <!-- Back to Quiz Button -->
+          <div class="results-actions">
+            <button type="button" id="backToQuizBtn" class="button secondary">
+              Back to Quiz
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="skin-quiz.js"></script>
+  </body>
+</html>

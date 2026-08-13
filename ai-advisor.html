@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Skincare Advisor - SkinWise</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="ai-advisor.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-head">
+            <span class="brand-name">SkinWise</span>
+            <span class="ai-badge">AI</span>
+          </div>
+          <p>Beginner Skincare Intelligence</p>
+        </div>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a class="nav-link" href="index.html">My Routine</a>
+          <a class="nav-link" href="skin-quiz.html">Skin Quiz</a>
+          <a class="nav-link" href="ingredient-decoder.html">Ingredient Decoder</a>
+          <a class="nav-link active" href="ai-advisor.html">AI Advisor</a>
+          <a class="nav-link" href="climate-adapter.html">Climate Adapter</a>
+          <a class="nav-link" href="skin-journal.html">Skin Journal</a>
+        </nav>
+
+        <div class="right-pill">
+          <span>Combination Skin</span>
+          <span class="pill-badge">3</span>
+        </div>
+      </header>
+
+      <main class="advisor-main">
+        <div class="advisor-container">
+          <div class="advisor-header">
+            <h1>✨ AI Skincare Advisor</h1>
+            <p>Chat with our AI to get personalized skincare recommendations tailored to your skin type, concerns, and lifestyle.</p>
+          </div>
+
+          <div class="chat-interface">
+            <div class="chat-messages" id="chatMessages">
+              <div class="message bot-message">
+                <div class="message-content">
+                  <p>👋 Hello! I'm your SkinWise AI Advisor. I'm here to help you build the perfect skincare routine!</p>
+                  <p>Tell me about your skin type and any concerns you have, and I'll recommend products and practices tailored just for you.</p>
+                  <div class="quick-prompts">
+                    <button class="quick-prompt-btn" data-prompt="I have dry, sensitive skin. What should my basic routine be?">Dry Skin Routine</button>
+                    <button class="quick-prompt-btn" data-prompt="My skin is oily and I struggle with acne. What do you recommend?">Oily, Acne-Prone</button>
+                    <button class="quick-prompt-btn" data-prompt="I have combination skin with T-zone acne. Help me!">Combination Skin</button>
+                    <button class="quick-prompt-btn" data-prompt="I live in a humid climate and my skin breaks out. What should I do?">Humid Climate Issues</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-input-area">
+              <form id="chatForm" class="chat-form">
+                <input
+                  type="text"
+                  id="userInput"
+                  placeholder="Ask me anything about skincare... (e.g., 'What's a good routine for acne-prone skin?')"
+                  autocomplete="off"
+                />
+                <button type="submit" class="send-btn">
+                  <span>Send</span>
+                  <span class="send-icon">→</span>
+                </button>
+              </form>
+              <p class="disclaimer">💡 AI recommendations are general guidance. Always patch test new products and consult a dermatologist for persistent skin issues.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="ai-advisor.js"></script>
+  </body>
+</html>

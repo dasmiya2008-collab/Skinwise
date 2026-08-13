@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Climate Adapter - SkinWise</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="climate-adapter.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-head">
+            <span class="brand-name">SkinWise</span>
+            <span class="ai-badge">AI</span>
+          </div>
+          <p>Beginner Skincare Intelligence</p>
+        </div>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a class="nav-link" href="index.html">My Routine</a>
+          <a class="nav-link" href="skin-quiz.html">Skin Quiz</a>
+          <a class="nav-link" href="ingredient-decoder.html">Ingredient Decoder</a>
+          <a class="nav-link" href="ai-advisor.html">AI Advisor</a>
+          <a class="nav-link active" href="climate-adapter.html">Climate Adapter</a>
+          <a class="nav-link" href="skin-journal.html">Skin Journal</a>
+        </nav>
+
+        <div class="right-pill">
+          <span>Combination Skin</span>
+          <span class="pill-badge">3</span>
+        </div>
+      </header>
+
+      <main class="adapter-main">
+        <section class="adapter-hero">
+          <div class="adapter-header">
+            <span class="kicker">Climate Adapter</span>
+            <h1>Adapt Your Routine to Your Climate & Season</h1>
+            <p>
+              Weather and climate dramatically affect your skin. Get AI-powered recommendations to adjust your skincare routine based on your location, season, humidity, temperature, and air quality. Perfect for India's diverse climates—from humid coastal areas to dry northern plains.
+            </p>
+          </div>
+
+          <div class="adapter-container">
+            <!-- Climate Input Form -->
+            <section class="climate-input-section">
+              <h2>Your Climate Profile</h2>
+              <form id="climateForm" class="climate-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="location">Your Location</label>
+                    <input
+                      type="text"
+                      id="location"
+                      name="location"
+                      placeholder="e.g. Mumbai, Delhi, Bangalore"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="season">Current Season</label>
+                    <select id="season" name="season" required>
+                      <option value="">Select season</option>
+                      <option value="summer">Summer (Hot & Humid)</option>
+                      <option value="monsoon">Monsoon (Wet & Humid)</option>
+                      <option value="winter">Winter (Cold & Dry)</option>
+                      <option value="spring">Spring (Mild & Variable)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="humidity">Humidity Level</label>
+                    <select id="humidity" name="humidity" required>
+                      <option value="">Select humidity</option>
+                      <option value="very-low">Very Low (0-30%)</option>
+                      <option value="low">Low (30-50%)</option>
+                      <option value="moderate">Moderate (50-70%)</option>
+                      <option value="high">High (70-90%)</option>
+                      <option value="very-high">Very High (90%+)</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="temperature">Temperature Range</label>
+                    <select id="temperature" name="temperature" required>
+                      <option value="">Select temperature</option>
+                      <option value="very-cold">Very Cold (Below 0°C)</option>
+                      <option value="cold">Cold (0-10°C)</option>
+                      <option value="moderate">Moderate (10-25°C)</option>
+                      <option value="warm">Warm (25-35°C)</option>
+                      <option value="hot">Hot (Above 35°C)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="pollution">Air Quality/Pollution</label>
+                    <select id="pollution" name="pollution" required>
+                      <option value="">Select air quality</option>
+                      <option value="excellent">Excellent (AQI 0-50)</option>
+                      <option value="good">Good (AQI 51-100)</option>
+                      <option value="moderate">Moderate (AQI 101-200)</option>
+                      <option value="poor">Poor (AQI 201-300)</option>
+                      <option value="very-poor">Very Poor (AQI 300+)</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="uvIndex">UV Index</label>
+                    <select id="uvIndex" name="uvIndex" required>
+                      <option value="">Select UV index</option>
+                      <option value="low">Low (0-2)</option>
+                      <option value="moderate">Moderate (3-5)</option>
+                      <option value="high">High (6-7)</option>
+                      <option value="very-high">Very High (8-10)</option>
+                      <option value="extreme">Extreme (11+)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <button type="submit" class="button primary adapt-btn">
+                  <span class="btn-icon">🌍</span>
+                  Get Climate-Adapted Routine
+                </button>
+              </form>
+            </section>
+
+            <!-- Recommendations Section -->
+            <section id="recommendations" class="recommendations-section hidden">
+              <h2>Your Personalized Climate Routine</h2>
+              
+              <div class="climate-summary">
+                <div class="climate-badge">
+                  <div class="badge-icon">🌍</div>
+                  <div class="badge-text">
+                    <div class="badge-location" id="summaryLocation"></div>
+                    <div class="badge-details" id="summaryDetails"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="recommendations-grid">
+                <div class="recommendation-card cleanser">
+                  <div class="card-icon">🧼</div>
+                  <h3>Cleanser</h3>
+                  <div class="recommendation-content" id="cleanserRec"></div>
+                </div>
+
+                <div class="recommendation-card toner">
+                  <div class="card-icon">💧</div>
+                  <h3>Toner</h3>
+                  <div class="recommendation-content" id="tonerRec"></div>
+                </div>
+
+                <div class="recommendation-card serum">
+                  <div class="card-icon">✨</div>
+                  <h3>Serum</h3>
+                  <div class="recommendation-content" id="serumRec"></div>
+                </div>
+
+                <div class="recommendation-card moisturizer">
+                  <div class="card-icon">🌱</div>
+                  <h3>Moisturizer</h3>
+                  <div class="recommendation-content" id="moisturizerRec"></div>
+                </div>
+
+                <div class="recommendation-card sunscreen">
+                  <div class="card-icon">☀️</div>
+                  <h3>Sunscreen</h3>
+                  <div class="recommendation-content" id="sunscreenRec"></div>
+                </div>
+
+                <div class="recommendation-card treatments">
+                  <div class="card-icon">⚗️</div>
+                  <h3>Special Treatments</h3>
+                  <div class="recommendation-content" id="treatmentsRec"></div>
+                </div>
+              </div>
+
+              <div class="climate-tips">
+                <h3>Climate-Specific Tips</h3>
+                <ul id="tipslist" class="tips-list"></ul>
+              </div>
+
+              <button type="button" id="resetAdapterBtn" class="button secondary">Adjust Climate Profile</button>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="climate-adapter.js"></script>
+  </body>
+</html>

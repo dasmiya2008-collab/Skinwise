@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Ingredient Decoder - SkinWise</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="ingredient-decoder.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-head">
+            <span class="brand-name">SkinWise</span>
+            <span class="ai-badge">AI</span>
+          </div>
+          <p>Beginner Skincare Intelligence</p>
+        </div>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a class="nav-link" href="index.html">My Routine</a>
+          <a class="nav-link" href="skin-quiz.html">Skin Quiz</a>
+          <a class="nav-link active" href="ingredient-decoder.html">Ingredient Decoder</a>
+          <a class="nav-link" href="ai-advisor.html">AI Advisor</a>
+          <a class="nav-link" href="climate-adapter.html">Climate Adapter</a>
+          <a class="nav-link" href="skin-journal.html">Skin Journal</a>
+        </nav>
+
+        <div class="right-pill">
+          <span>Combination Skin</span>
+          <span class="pill-badge">3</span>
+        </div>
+      </header>
+
+      <main class="decoder-main">
+        <section class="decoder-hero">
+          <div class="decoder-header">
+            <span class="kicker">AI Ingredient Decoder</span>
+            <h1>Decode Any Skincare Ingredient List</h1>
+            <p>
+              Paste the INCI ingredient list from any serum, cleanser, or moisturizer. Our AI instantly translates complex chemical terms into plain English, highlighting active ingredients, irritants, comedogenic risk, and compatibility with your <strong>combination</strong> skin.
+            </p>
+          </div>
+
+          <div class="decoder-container">
+            <form id="decoderForm" class="decoder-form">
+              <fieldset class="form-group full-width">
+                <label for="productName">Product Name (Optional)</label>
+                <input
+                  type="text"
+                  id="productName"
+                  name="productName"
+                  placeholder="e.g. CeraVe Hydrating Cleanser"
+                />
+              </fieldset>
+
+              <fieldset class="form-group full-width">
+                <label for="ingredientList">Paste Ingredient List (INCI)</label>
+                <textarea
+                  id="ingredientList"
+                  name="ingredientList"
+                  placeholder="e.g. Aqua, Glycerin, Niacinamide, Salicylic Acid, Sodium Hyaluronate, Ceramide NP, Phenoxyethanol..."
+                  rows="8"
+                ></textarea>
+              </fieldset>
+
+              <div class="quick-samples">
+                <span class="samples-label">Try Quick Sample:</span>
+                <div class="sample-buttons">
+                  <button type="button" class="sample-btn" data-product="CeraVe Hydrating Cleanser" data-ingredients="Water, Cetyl Alcohol, Dimethicone, Niacinamide, Panthenol, Ceramide NP, Ceramide AP, Ceramide EOP, Phytosphingosine, Cholesterol, Hyaluronic Acid, Allantoin, Phenoxyethanol">
+                    CeraVe Hydrating Cleanser
+                  </button>
+                  <button type="button" class="sample-btn" data-product="COSRX Snail Mucin 96 Essence" data-ingredients="Snail Secretion Filtrate, Betaine, Glycerin, Phenoxyethanol, Methylparaben, Propylparaben, Sodium Chloride, Disodium EDTA">
+                    COSRX Snail Mucin 96 Essence
+                  </button>
+                  <button type="button" class="sample-btn" data-product="Paula's Choice 2% BHA Liquid" data-ingredients="Salicylic Acid, Water, Butylene Glycol, Panthenol, Allantoin, Aloe Barbadensis Leaf Juice, Sodium Hydroxide, Phenoxyethanol, Fragrance">
+                    Paula's Choice 2% BHA Liquid
+                  </button>
+                </div>
+              </div>
+
+              <button type="submit" class="button primary decode-btn">
+                <span class="btn-icon">⚙️</span>
+                Decode & Analyze Ingredients
+              </button>
+            </form>
+
+            <section id="results" class="decoder-results hidden">
+              <h2>Ingredient Analysis</h2>
+              
+              <div class="result-card product-info">
+                <h3 id="resultProductName"></h3>
+              </div>
+
+              <div class="results-grid">
+                <div class="result-card active-ingredients">
+                  <h3>Active Ingredients</h3>
+                  <ul id="activeList"></ul>
+                </div>
+
+                <div class="result-card benefits">
+                  <h3>Key Benefits</h3>
+                  <ul id="benefitsList"></ul>
+                </div>
+
+                <div class="result-card irritants">
+                  <h3>⚠️ Potential Irritants</h3>
+                  <ul id="irritantsList"></ul>
+                </div>
+
+                <div class="result-card compatibility">
+                  <h3>Compatibility with Your Skin</h3>
+                  <div id="compatibilityScore"></div>
+                </div>
+              </div>
+
+              <div class="full-width-result">
+                <h3>Full Ingredient Breakdown</h3>
+                <div id="fullBreakdown" class="ingredient-breakdown"></div>
+              </div>
+
+              <button type="button" id="resetBtn" class="button secondary">Analyze Another Product</button>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="ingredient-decoder.js"></script>
+  </body>
+</html>

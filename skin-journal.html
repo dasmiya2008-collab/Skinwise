@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Journal - SkinWise</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="skin-journal.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-head">
+            <span class="brand-name">SkinWise</span>
+            <span class="ai-badge">AI</span>
+          </div>
+          <p>Beginner Skincare Intelligence</p>
+        </div>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a class="nav-link" href="index.html">My Routine</a>
+          <a class="nav-link" href="skin-quiz.html">Skin Quiz</a>
+          <a class="nav-link" href="ingredient-decoder.html">Ingredient Decoder</a>
+          <a class="nav-link" href="ai-advisor.html">AI Advisor</a>
+          <a class="nav-link" href="climate-adapter.html">Climate Adapter</a>
+          <a class="nav-link active" href="skin-journal.html">Skin Journal</a>
+        </nav>
+
+        <div class="right-pill">
+          <span>Combination Skin</span>
+          <span class="pill-badge">3</span>
+        </div>
+      </header>
+
+      <main class="journal-main">
+        <div class="journal-container">
+          <div class="journal-header">
+            <h1>📔 Skin Journal</h1>
+            <p>Track your skincare journey. Log daily observations, products used, and how your skin responds. Identify patterns and optimize your routine over time.</p>
+          </div>
+
+          <div class="journal-content">
+            <!-- New Entry Form -->
+            <section class="new-entry-section">
+              <h2>Add Today's Entry</h2>
+              <form id="journalForm" class="journal-form">
+                <div class="form-group">
+                  <label for="entryDate">Date</label>
+                  <input type="date" id="entryDate" name="entryDate" required />
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="skinCondition">Overall Skin Condition</label>
+                    <select id="skinCondition" name="skinCondition" required>
+                      <option value="">Select condition</option>
+                      <option value="excellent">Excellent 🌟</option>
+                      <option value="great">Great ✨</option>
+                      <option value="good">Good 👍</option>
+                      <option value="okay">Okay 😐</option>
+                      <option value="poor">Poor 😞</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hydration">Hydration Level</label>
+                    <select id="hydration" name="hydration" required>
+                      <option value="">Select level</option>
+                      <option value="very-dry">Very Dry</option>
+                      <option value="dry">Dry</option>
+                      <option value="normal">Normal</option>
+                      <option value="oily">Oily</option>
+                      <option value="very-oily">Very Oily</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="breakouts">Breakouts/Blemishes</label>
+                    <select id="breakouts" name="breakouts" required>
+                      <option value="">Select count</option>
+                      <option value="none">None</option>
+                      <option value="1-2">1-2</option>
+                      <option value="3-5">3-5</option>
+                      <option value="5+">5+</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="irritation">Redness/Irritation</label>
+                    <select id="irritation" name="irritation" required>
+                      <option value="">Select level</option>
+                      <option value="none">None</option>
+                      <option value="mild">Mild</option>
+                      <option value="moderate">Moderate</option>
+                      <option value="severe">Severe</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="productsUsed">Products Used Today</label>
+                  <textarea
+                    id="productsUsed"
+                    name="productsUsed"
+                    placeholder="e.g. CeraVe Cleanser, The Ordinary Niacinamide, Moisturizer, SPF 30..."
+                    rows="3"
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="notes">Notes & Observations</label>
+                  <textarea
+                    id="notes"
+                    name="notes"
+                    placeholder="How did your skin feel? Any reactions? Weather changes? Stress levels? What worked or didn't work?"
+                    rows="4"
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="button primary save-entry-btn">📝 Save Entry</button>
+              </form>
+            </section>
+
+            <!-- Entries History -->
+            <section class="entries-section">
+              <div class="entries-header">
+                <h2>Your Entries</h2>
+                <div class="entries-controls">
+                  <select id="filterCondition" class="filter-select">
+                    <option value="">All Conditions</option>
+                    <option value="excellent">Excellent</option>
+                    <option value="great">Great</option>
+                    <option value="good">Good</option>
+                    <option value="okay">Okay</option>
+                    <option value="poor">Poor</option>
+                  </select>
+                  <button id="clearAllBtn" class="button secondary small-btn">Delete All</button>
+                </div>
+              </div>
+
+              <div id="entriesList" class="entries-list">
+                <div class="no-entries">
+                  <p>📔 No entries yet. Start tracking your skin journey today!</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Insights -->
+            <section class="insights-section">
+              <h2>Your Insights</h2>
+              <div id="insights" class="insights-grid">
+                <div class="insight-card">
+                  <div class="insight-label">Total Entries</div>
+                  <div class="insight-value" id="totalEntries">0</div>
+                </div>
+                <div class="insight-card">
+                  <div class="insight-label">Best Condition</div>
+                  <div class="insight-value" id="bestCondition">—</div>
+                </div>
+                <div class="insight-card">
+                  <div class="insight-label">Avg. Breakouts</div>
+                  <div class="insight-value" id="avgBreakouts">0</div>
+                </div>
+                <div class="insight-card">
+                  <div class="insight-label">This Week</div>
+                  <div class="insight-value" id="weekEntries">0 entries</div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="skin-journal.js"></script>
+  </body>
+</html>

@@ -1,0 +1,472 @@
+/* Skin Journal Styles */
+
+.journal-main {
+  padding: 2rem 0;
+  min-height: 100%;
+}
+
+.journal-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.journal-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.journal-header h1 {
+  margin: 0 0 1rem 0;
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.journal-header p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--muted-2);
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.journal-content {
+  display: grid;
+  gap: 2.5rem;
+}
+
+/* New Entry Section */
+.new-entry-section {
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  border: 1px solid rgba(31, 35, 40, 0.08);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(31, 35, 40, 0.06);
+}
+
+.new-entry-section h2 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.4rem;
+  color: var(--text);
+}
+
+.journal-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(31, 35, 40, 0.15);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background: var(--surface-2);
+  color: var(--text);
+  font-family: inherit;
+  transition: all 180ms ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(75, 92, 64, 0.1);
+  background: #fff;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.save-entry-btn {
+  padding: 1.1rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+/* Entries Section */
+.entries-section {
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  border: 1px solid rgba(31, 35, 40, 0.08);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(31, 35, 40, 0.06);
+}
+
+.entries-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.entries-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--text);
+  flex: 1;
+  min-width: 200px;
+}
+
+.entries-controls {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-select {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(31, 35, 40, 0.15);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(75, 92, 64, 0.1);
+}
+
+.small-btn {
+  padding: 0.75rem 1.2rem;
+  font-size: 0.9rem;
+}
+
+.entries-list {
+  display: grid;
+  gap: 1.5rem;
+  max-height: 800px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.entries-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.entries-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.entries-list::-webkit-scrollbar-thumb {
+  background: rgba(31, 35, 40, 0.15);
+  border-radius: 999px;
+}
+
+.entries-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(31, 35, 40, 0.25);
+}
+
+.no-entries {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* Entry Card */
+.entry-card {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(248, 247, 241, 0.5) 0%, rgba(240, 238, 228, 0.5) 100%);
+  border: 1px solid rgba(31, 35, 40, 0.08);
+  border-radius: 16px;
+  transition: all 180ms ease;
+  animation: slideIn 300ms ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.entry-card:hover {
+  box-shadow: 0 4px 16px rgba(31, 35, 40, 0.1);
+  transform: translateY(-2px);
+}
+
+.entry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.entry-date {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.entry-condition-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.condition-excellent {
+  background: rgba(46, 204, 113, 0.15);
+  color: #27ae60;
+}
+
+.condition-great {
+  background: rgba(52, 152, 219, 0.15);
+  color: #2980b9;
+}
+
+.condition-good {
+  background: rgba(155, 89, 182, 0.15);
+  color: #8e44ad;
+}
+
+.condition-okay {
+  background: rgba(241, 196, 15, 0.15);
+  color: #d68910;
+}
+
+.condition-poor {
+  background: rgba(231, 76, 60, 0.15);
+  color: #c0392b;
+}
+
+.entry-delete {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 180ms ease;
+}
+
+.entry-delete:hover {
+  color: #e74c3c;
+}
+
+.entry-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(31, 35, 40, 0.08);
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metric-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.metric-value {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.entry-products {
+  margin-bottom: 1rem;
+}
+
+.entry-products-label {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.entry-products-text {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.entry-notes {
+  color: var(--muted-2);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Insights Section */
+.insights-section {
+  padding: 2.5rem;
+  background: linear-gradient(135deg, var(--primary-soft) 0%, rgba(222, 232, 214, 0.3) 100%);
+  border-radius: 24px;
+  border: 1px solid rgba(75, 92, 64, 0.2);
+}
+
+.insights-section h2 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.4rem;
+  color: var(--text);
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.insight-card {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  border: 1px solid rgba(75, 92, 64, 0.15);
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(31, 35, 40, 0.04);
+}
+
+.insight-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.insight-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .journal-container {
+    padding: 1rem;
+  }
+
+  .journal-header h1 {
+    font-size: 2rem;
+  }
+
+  .new-entry-section,
+  .entries-section,
+  .insights-section {
+    padding: 1.5rem;
+  }
+
+  .entries-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .entries-header h2 {
+    width: 100%;
+  }
+
+  .entries-controls {
+    width: 100%;
+  }
+
+  .filter-select,
+  .small-btn {
+    flex: 1;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .entry-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .entry-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .insights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .journal-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .journal-header p {
+    font-size: 0.95rem;
+  }
+
+  .new-entry-section,
+  .entries-section,
+  .insights-section {
+    padding: 1.25rem;
+  }
+
+  .entry-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .insight-value {
+    font-size: 1.5rem;
+  }
+}
